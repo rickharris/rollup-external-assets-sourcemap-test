@@ -1,4 +1,5 @@
 import { defineConfig } from "rollup";
+import { externalAssets } from "rollup-plugin-external-assets";
 
 export default defineConfig({
   input: "./index.js",
@@ -6,4 +7,5 @@ export default defineConfig({
     dir: "dist",
     sourcemap: true,
   },
+  plugins: [externalAssets({ include: ["**/*.png"] })],
 });
